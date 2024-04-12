@@ -99,7 +99,8 @@ async function withPage(fn) {
 
   try {
     browser = await puppeteer.launch({
-      headless: 'new'
+      headless: 'new',
+      args: ['--no-sandbox']
     });
 
     await fn(await browser.newPage());
